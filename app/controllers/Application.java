@@ -33,7 +33,7 @@ public class Application extends Controller {
       }
   }
   
-  public static Result deleteTask(Long id) {
+  public static Result deleteTask(String id) {
     Task.delete(id);
     return redirect(routes.Application.tasks());
   }

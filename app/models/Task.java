@@ -1,35 +1,36 @@
 package models;
 
 import java.util.*;
-
-import play.db.ebean.*;
-import play.data.validation.Constraints.*;
+import play.modules.mongodb.jackson.MongoDB;
+import net.vz.mongodb.jackson.JacksonDBCollection;
+import net.vz.mongodb.jackson.Id;
+import net.vz.mongodb.jackson.ObjectId;
+import org.codehaus.jackson.annotate.JsonProperty;
 
 import javax.persistence.*;
 
-@Entity 
-public class Task extends Model{
+public class Task{
     
   @Id
-  public Long id;
+  @ObjectId
+  public String id;
 
-  @Required
   public String label;
 
-  public static Finder<Long,Task> find = new Finder(
-    Long.class, Task.class
-  );
-  
+  private static JacksonDBCollection<Task, String> coll = MongoDB.getCollection("tasks", Task.class, String.class);
+
   public static List<Task> all() {
-    return find.all();
+    return Task.coll.find().toArray();
   }
 
   public static void create(Task task) {
-    task.save();
+    Task.coll.save(task);
   }
 
-  public static void delete(Long id) {
-    find.ref(id).delete();
+  public static void delete(String id) {
+    Task task = Task.coll.findOneById(id);
+    if (task != null)
+        Task.coll.remove(task);
   }
     
 }
