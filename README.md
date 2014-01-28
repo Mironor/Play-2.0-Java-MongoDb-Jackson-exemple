@@ -1,4 +1,6 @@
-First steps with Playframework 2.0 (Java) and MongoDb (Jackson)
+Updated to 2.2.1 (just sbt files)
+
+First steps with Playframework 2.2.1 (Java) and MongoDb (Jackson)
 --------------------------------------------------
 
 Finish the todo application turorial from the official wiki Play 2.2.1 framework with Java (http://www.playframework.com/documentation/2.2.1/JavaTodoList)
