@@ -1,4 +1,5 @@
-Updated to 2.2.1 (just sbt files)
+Update:
+- Added tests for Task model
 
 First steps with Playframework 2.2.1 (Java) and MongoDb (Jackson)
 --------------------------------------------------
