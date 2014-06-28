@@ -6,3 +6,6 @@ tmp
 .history
 dist
 .settings
+.idea
+.idea_modules
+.settings
