@@ -1,6 +1,6 @@
 What's new:
 
-- Updated to 2.3.1, there is no play-mongo-jackson-wrapper lib for 2.11 scala (default for play 2.3.1), that's why we manually set scala version to 2.10.0 in build.sbt
+- Updated scala version to 2.11.1
 
 First steps with Playframework 2.3.1 (Java) and MongoDb (Jackson)
 --------------------------------------------------
